@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    color: white;
+    font-family: sans-serif;
+    width: 200px;
+    height: 200px;
+    margin: 4px;
+    padding: 8px;
+    border: 2px black solid;
+}
+
+@property --box-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: cornflowerblue;
+}
+
+.parent {
+    --box-color: green; 
+    /* override since inhertiance is disabled, otherwise no override will happen! */
+    background-color: var(--box-color);
+}
+
+.child {
+    width: 80%;
+    height: 40%;
+    background-color: var(--box-color);
+}
+
+
+
+  
+  

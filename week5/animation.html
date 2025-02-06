@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        .slider {
+            width: 150px;
+            height: 50px;
+            background-color: dodgerblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-weight: bold;
+            border-radius: 8px;
+            animation: slideInOut 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes slideInOut {
+            from {
+                transform: translateX(-100px);
+            }
+
+            to {
+                transform: translate(100px);
+            }
+        }
+
+        p {
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+
+        @keyframes slidein {
+            from {
+                translate: 150vw 0;
+                scale: 200% 1;
+            }
+
+            to {
+                translate: 0 0;
+                scale: 100% 1;
+            }
+        }
+
+        p span {
+            display: inline-block;
+            animation-duration: 3s;
+            animation-name: growshrink;
+        }
+
+        @keyframes growshrink {
+            25%, 75% {
+                scale: 100%;
+            }
+
+            50% {
+                scale: 200%;
+                color: magenta;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">Sliding</div>
+    <p>
+        The Caterpillar and <span>Alice</span> looked at each other for some time in silence: at
+        last the Caterpillar took the hookah out of its mouth, and addressed her in a
+        languid, sleepy voice.
+    </p>
+</body>
+</html>
