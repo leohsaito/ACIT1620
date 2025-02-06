@@ -23,7 +23,7 @@ The header class should include the following styles
     background-color: aquamarine;
     color: brown;
     padding: 10px;
-    align-items: center;
+    text-align: center;
     border-bottom: 3px solid black;
 }
 
