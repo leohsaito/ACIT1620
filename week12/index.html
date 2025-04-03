@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+        img {
+            margin: 20px;
+        }
+    </style>
+    <script>
+        window.onload = init;
+
+        function init() {
+            let image = document.getElementsByTagName("img");
+            for (let i = 0; i < image.length; i++) {
+                image[i].onclick = showAnswer;
+            }
+        }
+
+        function showAnswer(eventObj) {
+            let image = eventObj.target;
+            let name = image.id;
+            name = "images_Week12/" + name + ".jpg";
+            image.src = name;
+        }
+    </script>
+</head>
+<body>
+    <img id="zero" src="images_Week12/zeroblur.jpg">
+    <img id="one" src="images_Week12/oneblur.jpg">
+    <img id="two" src="images_Week12/twoblur.jpg">
+    <img id="three" src="images_Week12/threeblur.jpg">
+    <img id="four" src="images_Week12/fourblur.jpg">
+    <img id="five" src="images_Week12/fiveblur.jpg">
+</body>
+</html>
