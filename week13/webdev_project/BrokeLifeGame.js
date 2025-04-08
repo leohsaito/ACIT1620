@@ -83,6 +83,7 @@ const lose = document.getElementById('lose');
 const restartGame = document.getElementById('restart');
 
 cards.forEach(card => {
+    card.ondragstart = function() {return false;} 
     card.addEventListener('click', function(event) {
         if (memory.matchesLeft == 0) {
             info.innerHTML = 'Out of matches!';
