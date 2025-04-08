@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrokeLifeGame</title>
+    <link rel="stylesheet" href="BrokeLifeGame.css">
+    <script src="BrokeLifeGame.js" defer></script>
+</head>
+<body>
+    <header id="home">
+        <div id="time">
+            <p id="day">Monday</p>
+            <p id="timeofday">Morning</p>
+        </div>
+        <div id="welcome">
+            <h1 id="locator">Home</h1>
+        </div>
+        <div id="money">
+            <p id="balance">Money: 0</p>
+            <p id="needs">Goal: 1000</p>
+        </div>
+    </header>
+    <div id="menu">
+        <button id="work" onclick="startWork()">Work</button>
+        <button id="casino" onclick="playBlackJack()">Gamble</button>
+        <button id="sleep" onclick="updateDay()" disabled>Sleep</button>
+    </div>
+    <div id="memorymatch" class="hide">
+        <div class="mmdisplay">
+            <div id="displaymatches">
+                <h2 id="chances">Matches Left: 8</h2>
+            </div>
+            <div id="board">
+                <div class="cardcontainer"><img src="" id="0" class="card"></div>
+                <div class="cardcontainer"><img src="" id="1" class="card"></div>
+                <div class="cardcontainer"><img src="" id="2" class="card"></div>
+                <div class="cardcontainer"><img src="" id="3" class="card"></div>
+                <div class="cardcontainer"><img src="" id="4" class="card"></div>
+                <div class="cardcontainer"><img src="" id="5" class="card"></div>
+                <div class="cardcontainer"><img src="" id="6" class="card"></div>
+                <div class="cardcontainer"><img src="" id="7" class="card"></div>
+                <div class="cardcontainer"><img src="" id="8" class="card"></div>
+                <div class="cardcontainer"><img src="" id="9" class="card"></div>
+                <div class="cardcontainer"><img src="" id="10" class="card"></div>
+                <div class="cardcontainer"><img src="" id="11" class="card"></div>
+                <div class="cardcontainer"><img src="" id="12" class="card"></div>
+                <div class="cardcontainer"><img src="" id="13" class="card"></div>
+                <div class="cardcontainer"><img src="" id="14" class="card"></div>
+                <div class="cardcontainer"><img src="" id="15" class="card"></div>
+                <div class="cardcontainer"><img src="" id="16" class="card"></div>
+                <div class="cardcontainer"><img src="" id="17" class="card"></div>
+                <div class="cardcontainer"><img src="" id="18" class="card"></div>
+                <div class="cardcontainer"><img src="" id="19" class="card"></div>
+                <div class="cardcontainer"><img src="" id="20" class="card"></div>
+                <div class="cardcontainer"><img src="" id="21" class="card"></div>
+                <div class="cardcontainer"><img src="" id="22" class="card"></div>
+                <div class="cardcontainer"><img src="" id="23" class="card"></div>
+            </div>
+            <div id="matchingstats">
+                <h2 id="earnings">Money Earned: 0</h2>
+            </div>
+            <div id="donework">
+                <button id="staywork" onclick="stayWork()">Continue</button>
+                <button id="leavework" onclick="leaveWork()">Leave</button>
+            </div>
+        </div>
+    </div> 
+    <div id="blackjack" class="hide">
+        <div id="table">
+            <h2 id="dealerhand">Dealer Hand: 0</h2>
+            <div id="dealer"></div>
+            <h2 id="playerhand">Your Hand: 0</h2>
+            <div id="player"></div>
+        </div>
+        <div id="wager">
+            <h2>Blackjack</h2>
+            <button id="one" onclick="addMoney(this)">1</button>
+            <button id="ten" onclick="addMoney(this)">10</button>
+            <button id="hundred" onclick="addMoney(this)">100</button>
+            <button id="all" onclick="addMoney(this)">ALL</button>
+        </div>
+        <div id="displaybet">
+            <h2 id="bet">Current Bet: 0</h2>
+        </div>
+        <div id="play">
+            <button id="deal" onclick="startGame()">Deal</button>
+            <button id="refund" onclick="refundMoney()">Refund</button>
+        </div>
+        <div id="options">
+            <button id="hit" onclick="hit()">Hit</button>
+            <button id="stand" onclick="stand()">Stand</button>
+            <button id="split" onclick="split()">Split</button>
+            <button id="double" onclick="doubleDown()">Double</button>
+        </div>
+        <div id="donecasino">
+            <button id="staycasino" onclick="stayCasino()">Continue</button>
+            <button id="leavecasino" onclick="leaveCasino()">Leave</button>
+        </div>
+    </div>
+    <div id="win" class="hide">
+    </div>
+    <div id="lose" class="hide">
+    </div>
+    <footer id="message">
+        <h2 id="info">
+            Welcome to Broke Life Simulator!<br> 
+            It is yet another Monday morning. Your landlord has just reminded you your rent is due on Sunday at midnight.<br> 
+            Unfortunately, you are penniless after a disastrous session at the local casino and you need $1000 to pay rent.<br>
+            If you do not pay it in time, you will be evicted without negotiation. Better start working right now. Chop chop!
+        </h2>
+        <div id="restart" class="hide">
+            <button onclick="restart()">Restart</button>
+        </div>
+    </footer>
+</body>
+</html>
