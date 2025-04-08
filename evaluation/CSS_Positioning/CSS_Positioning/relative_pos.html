@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Relative Positioning Demo</title>
+  <style>
+    /* Relative positioning demo:
+       - Elements with position: static follow the normal document flow,
+         so offset properties like left, top, etc., have no effect.
+       - Elements with position: relative remain in the document flow,
+         but can be shifted from their original position using offset properties.
+    */
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      line-height: 200px; /* centers text vertically */
+    }
+
+    /* This box is statically positioned, so the left offset is ignored */
+    #red_box {
+      position: static;
+      background-color: #ee3e64;
+      left: 100px;  /* This property is ignored because the box is static */
+    }
+
+    /* This box is relatively positioned, so the left offset moves it 100px to the right */
+    #blue_box {
+      position: relative;
+      background-color: #44accf;
+      left: 100px;  /* This moves the blue box 100px to the right */
+    }
+
+    /* This box is also static, so the left offset is ignored */
+    #green_box {
+      position: static;
+      background-color: #b7d84b;
+      left: 100px;  /* This property is ignored because the box is static */
+    }
+  </style>
+</head>
+<body>
+  <div id="red_box" class="box">Static</div>
+  <div id="blue_box" class="box">Relative</div>
+  <div id="green_box" class="box">Static</div>
+</body>
+</html>

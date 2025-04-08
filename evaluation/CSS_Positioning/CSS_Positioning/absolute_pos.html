@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Absolute Positioning Demo</title>
+  <style>
+    /* The container is set to relative positioning. This means that any absolutely
+       positioned child elements will use this container as their positioning context. */
+    .container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: 50px auto;
+      background: #f0f0f0;
+      border: 2px solid #ccc;
+    }
+    
+    /* Common styles for all boxes */
+    .box {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      line-height: 150px; /* centers text vertically */
+      text-align: center;
+      font-size: 20px;
+      color: #fff;
+    }
+    
+    /* Red box positioned at the top left corner */
+    #red_box { 
+      top: 10px;
+      left: 10px;
+      background: #ee3e64;
+    }
+    
+    /* Blue box positioned at the top right corner */
+    #blue_box { 
+      top: 10px;
+      right: 10px;
+      background: #44accf;
+    }
+    
+    /* Green box positioned at the bottom left corner */
+    #green_box { 
+      bottom: 10px;
+      left: 10px;
+      background: #b7d84b;
+    }
+    
+    /* Yellow box positioned at the bottom right corner */
+    #yellow_box { 
+      bottom: 10px;
+      right: 10px;
+      background: #ebde52;
+      color: #333; /* dark text for contrast */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="red_box" class="box">Red</div>
+    <div id="blue_box" class="box">Blue</div>
+    <div id="green_box" class="box">Green</div>
+    <div id="yellow_box" class="box">Yellow</div>
+  </div>
+</body>
+</html>

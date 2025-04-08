@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Methods - Full Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Array Methods - Full Example with Comments</h1>
+  <pre id="output"></pre>
+
+  <script>
+    // Output helper function
+    const out = (msg) => {
+      document.getElementById('output').textContent += msg + "\n";
+    };
+
+    // 1. Creating an array
+    // Arrays can store multiple values in a single variable
+    let fruits = ['apple', 'banana', 'cherry'];
+    out("Original array: " + JSON.stringify(fruits));
+
+    // 2. Accessing elements by index
+    // Indexing starts from 0, so fruits[0] is 'apple'
+    out("First fruit: " + fruits[0]);
+
+    // 3. Adding elements to the array
+    // push() adds to the end; unshift() adds to the beginning
+    fruits.push('date');       // ['apple', 'banana', 'cherry', 'date']
+    fruits.unshift('avocado'); // ['avocado', 'apple', 'banana', 'cherry', 'date']
+    out("After push and unshift: " + JSON.stringify(fruits));
+
+    // 4. Removing elements
+    // pop() removes the last element; shift() removes the first
+    fruits.pop();   // removes 'date'
+    fruits.shift(); // removes 'avocado'
+    out("After pop and shift: " + JSON.stringify(fruits));
+
+    // 5. Finding the index of an item
+    // indexOf() returns the position of an element (or -1 if not found)
+    let index = fruits.indexOf('banana');
+    out("Index of banana: " + index);
+
+    // 6. Removing an element using splice()
+    // splice(index, count) removes count items from the index
+    if (index > -1) {
+      fruits.splice(index, 1); // removes 'banana'
+    }
+    out("After removing banana: " + JSON.stringify(fruits));
+
+    // 7. Slicing part of an array (non-destructive)
+    // slice(start, end) returns a new array from start to end-1
+    let citrus = ['orange', 'lemon', 'lime', 'grapefruit'];
+    let sliced = citrus.slice(1, 3); // ['lemon', 'lime']
+    out("Sliced citrus: " + JSON.stringify(sliced));
+
+    // 8. Concatenating arrays
+    // concat() combines two arrays into a new one
+    let allFruits = fruits.concat(citrus);
+    out("Concatenated fruits: " + JSON.stringify(allFruits));
+
+    // 9. Looping through an array
+    // forEach() executes a function on each array element
+    allFruits.forEach((fruit, i) => {
+      out(`Fruit ${i}: ${fruit}`);
+    });
+
+    // 10. Transforming items in an array
+    // map() creates a new array by applying a function to each element
+    let upperFruits = allFruits.map(fruit => fruit.toUpperCase());
+    out("Uppercase fruits: " + JSON.stringify(upperFruits));
+
+    // 11. Filtering items from an array
+    // filter() returns a new array of elements that pass the test
+    let longFruits = allFruits.filter(fruit => fruit.length > 5);
+    out("Long-named fruits: " + JSON.stringify(longFruits));
+
+    // 12. Checking for values or conditions
+    // includes() checks if an element exists in the array
+    // every() checks if all elements match a condition
+    out("Contains apple? " + allFruits.includes('apple'));
+    out("All items are strings? " + allFruits.every(item => typeof item === 'string'));
+
+    // 13. Finding the first matching item
+    // find() returns the first item that satisfies a condition
+    let firstL = allFruits.find(fruit => fruit.startsWith('l'));
+    out("First fruit starting with 'l': " + firstL);
+
+    // 14. Reducing an array to a single value
+    // reduce() accumulates a result using a function from left to right
+    let fruitLengths = allFruits.map(f => f.length);
+    let totalLength = fruitLengths.reduce((sum, len) => sum + len, 0);
+    out("Total characters in all fruit names: " + totalLength);
+
+    // 15. Sorting the array
+    // sort() orders elements as strings by default
+    let sortedFruits = [...allFruits].sort(); // using spread to avoid mutating original
+    out("Sorted fruits: " + JSON.stringify(sortedFruits));
+
+    // 16. Reversing the array
+    // reverse() flips the order of elements in-place
+    let reversedFruits = [...allFruits].reverse();
+    out("Reversed fruits: " + JSON.stringify(reversedFruits));
+
+    // 17. Joining array into a string
+    // join(separator) merges elements into one string
+    let fruitString = allFruits.join(', ');
+    out("Fruit list: " + fruitString);
+
+    // 18. Filling an array with a value
+    // fill(value) sets all elements to the same value
+    let filledArray = new Array(3).fill("kiwi");
+    out("Filled with kiwi: " + JSON.stringify(filledArray));
+
+   
+  </script>
+</body>
+</html>

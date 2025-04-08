@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         .animate {
+         font-size: 25px;
+         color: blue;
+         font-weight: 600;
+         }
+         .processing {
+         height: 20px;
+         width: 200px;
+         border-radius: 15px;
+         border: 2px solid #000;
+         position: relative;
+         }
+         .processing_inner {
+         color: red;
+         position: absolute;
+         left: 0;
+         transition: all 0.5s ease-in;
+         }
+         .processing_inner_animate {
+         left: 100px;
+         transition: all 0.5s ease-out;
+         }
+      </style>
+   </head>
+   <body>
+      <center>
+         <h1>JavaScript Animation</h1>
+         <p id="para">
+            This text will automatically toggle
+            its color and font size after 1000
+            milliseconds.
+         </p>
+         <div class="processing">
+            <div id="process_bar" class="processing_inner">
+               JavaScript
+            </div>
+         </div>
+      </center>
+      <script>
+         const myPara = document.
+          getElementById('para');
+         const processBar = document.
+          getElementById('process_bar');
+         
+         function animatePara() {
+          myPara.classList.toggle('animate');
+          processBar.classList.
+          toggle('processing_inner_animate')
+         }
+         
+         setInterval(animatePara, 1000);
+      </script>
+   </body>
+</html>

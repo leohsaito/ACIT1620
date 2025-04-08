@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed and Absolute Positioning Example</title>
+  <style>
+    /* Fixed Sidebar: Remains on the left side of the viewport even when scrolling */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #44accf;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Main content area: Margin added so it doesn't get hidden behind the fixed sidebar */
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    
+    /* Relative container: Establishes a positioning context for absolutely positioned elements */
+    .relative-container {
+      position: relative;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border: 1px solid #ccc;
+      height: 2000px; /* Tall enough to enable scrolling */
+    }
+    
+    /* Absolutely positioned box within the relative container */
+    .abs-box {
+      position: absolute;
+      top: 150px;
+      left: 100px;
+      width: 150px;
+      height: 150px;
+      background-color: #ee3e64;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+    }
+    
+    /* Fixed box: Remains in the bottom right corner of the viewport at all times */
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      height: 150px;
+      background-color: #b7d84b;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Fixed Sidebar</h2>
+    <p>This sidebar stays fixed on the left side of the screen.</p>
+  </div>
+  
+  <div class="content">
+    <h1>Fixed and Absolute Positioning Demo</h1>
+    <p>Scroll down to see how fixed elements remain in place while the rest of the content scrolls.</p>
+    
+    <div class="relative-container">
+      <div class="abs-box">Absolute Box</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Praesent non
+        pulvinar erat, vitae tincidunt lectus. Cras sit amet ante eu nulla dignissim vehicula.
+        Mauris ac diam non urna dapibus ullamcorper. Sed commodo nisi nec mauris tempus, ac
+        sollicitudin metus facilisis.
+      </p>
+      <p>
+        Aliquam erat volutpat. Quisque ut sapien nec mauris pretium tincidunt. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed non velit nec
+        ligula consequat pharetra.
+      </p>
+      <p>
+        More content here to enable scrolling...
+      </p>
+    </div>
+  </div>
+  
+  <div class="fixed-box">Fixed Box</div>
+</body>
+</html>

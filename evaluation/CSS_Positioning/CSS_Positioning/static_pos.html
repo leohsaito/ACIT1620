@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Static Positioning Example</title>
+  <style>
+    /* 
+      Static positioning is the default for HTML elements.
+      Elements with static positioning are laid out in the normal document flow.
+      Offset properties (top, left, bottom, right) have no effect.
+    */
+    .box {
+      position: static;
+      width: 200px;
+      height: 200px;
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      line-height: 200px; /* centers text vertically */
+      margin-bottom: 10px;
+    }
+
+    #redBox {
+      background-color: #e74c3c;
+    }
+
+    #blueBox {
+      background-color: #3498db;
+      /* left: 50px; This property is ignored because the element is statically positioned. */
+    }
+
+    #greenBox {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div id="redBox" class="box">Static</div>
+  <div id="blueBox" class="box">Static</div>
+  <div id="greenBox" class="box">Static</div>
+</body>
+</html>

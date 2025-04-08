@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Selection Methods</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    .box {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">DOM Selection Methods Demo</h1>
+
+  <div class="box special">Box 1 - class="special"</div>
+  <div class="box">Box 2 - no class</div>
+  <div class="box special">Box 3 - class="special"</div>
+
+  <p>This is a paragraph.</p>
+  <p class="note">This is another paragraph with class="note".</p>
+
+  <button onclick="runDemo()">Run DOM Demo</button>
+
+  <script>
+    function runDemo() {
+      // 1. getElementById
+      // Selects a single element by its unique ID
+      let title = document.getElementById("main-title");
+      title.style.color = "blue"; // Change text color
+      console.log("getElementById:", title);
+
+      // 2. getElementsByClassName
+      // Returns a live HTMLCollection of all elements with the specified class
+      let specialBoxes = document.getElementsByClassName("special");
+      for (let i = 0; i < specialBoxes.length; i++) {
+        specialBoxes[i].style.border = "2px solid red";
+      }
+      console.log("getElementsByClassName:", specialBoxes);
+
+      // 3. getElementsByTagName
+      // Returns a live HTMLCollection of all elements with the given tag name
+      let paragraphs = document.getElementsByTagName("p");
+      for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.fontWeight = "bold";
+      }
+      console.log("getElementsByTagName:", paragraphs);
+
+      // 4. querySelector
+      // Selects the first element that matches the CSS selector
+      let firstBox = document.querySelector(".box");
+      firstBox.classList.add("highlight"); // Add a class
+      console.log("querySelector:", firstBox);
+
+      // 5. querySelectorAll
+      // Selects all elements that match the CSS selector
+      let allBoxes = document.querySelectorAll(".box");
+      allBoxes.forEach((box, index) => {
+        box.innerHTML += ` (box #${index + 1})`;
+      });
+      console.log("querySelectorAll:", allBoxes);
+    }
+  </script>
+
+</body>
+</html>
